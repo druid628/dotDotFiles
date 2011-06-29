@@ -1,0 +1,67 @@
+#!/bin/bash
+set -e
+help() {
+  echo "Usage: $0 <command> [vm]"
+  echo
+  echo "svnup Help Menu"
+  echo "Usage: $0 <option>"
+  echo "  Options:"
+  echo "  -x               Include External Repos"
+  echo "  --up-only        Preform only svn up and no symfony tasks"
+  echo "  --help           This help screen"
+  echo ""
+  exit 1
+}
+
+
+if [[ $# -eq 1 && $1 = 'help' ]]; then
+
+	echo "svnup Help Menu"
+	echo "	svnup [-x | -up-only]"
+	echo "	-x		 Include External Repos"
+	echo "	--up-only	 Preform only svn up and no symfony tasks"
+	echo "	help		 This help screen"
+	echo ""
+	exit;
+fi
+
+echo -e "\033[1;32mUpdating Source and Log\033[0m"
+
+echo -e "\033[1;34mUpdating Source...\033[0m"
+OLDREV=$(svn info|grep ^Revision:|cut -d\  -f2)
+echo -e "Updating from revision ${OLDREV}."
+
+
+if [[ $# -eq 1 && $1 = '-x' ]]; then
+	svn up
+else
+	svn up --ignore-externals 
+	if [[ $1 = '--up-only' ]]; then
+		exit 0;
+	fi
+fi
+
+if [ $? -ne 0 ]; then
+ echo -e "\033[1;31mError Updating Source\033[0m"
+ exit 1
+fi
+
+echo -e "\033[1;34mUpdating Log...\033[0m"
+svn info|grep ^Revision:|cut -d\  -f2 >svn.log
+svn log -l 20 >>svn.log
+# svn log -r committed >> svn.log
+if [ $? -ne 0 ]; then
+ echo -e "\033[1;31mError Updating svn.log\033[0m"
+fi
+
+php symfony project:permissions
+echo -e "\033[1;32mUpdated\033[0m"
+
+if [ -f ./symfony ]; then 
+ ./symfony cc 1> /dev/null
+fi
+
+# publish plugin assets
+./symfony plugin:publish-assets
+
+

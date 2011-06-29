@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# Name:   rmsvn
+#
+# Useage: rmsvn [-y] 
+#   [-y]    (Optional) Bypasses question and answer phase of script
+#
+# Purpose: Removes all .svn files from within a folder and subfolders
+#
+
+if [ $# -lt 1 ]; then
+ echo "Are you sure you want to remove all .svn folders from the"
+ echo "`pwd` folder [y/n]"
+ read YAYNAY
+   while (x=true)
+   do
+	case "$YAYNAY" in
+		[Yy])
+			echo "removing .svn files.... now"
+			find . -name .svn -exec rm -rf {} \;
+			exit
+			;;
+		[Nn])
+			echo "Whew! Aren't you glad I asked!?!"
+			exit
+			;;
+		*)
+			echo "Are you sure you want to remove all .svn folders from the"
+			echo "`pwd` folder [y/n]"
+			;;
+	esac
+   done
+		
+elif [ $1 == '-y' ]; then
+   echo "removing .svn files.... now"
+   find . -name .svn -exec rm -rf {} \;
+fi
+
+# --DruiD628

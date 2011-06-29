@@ -1,0 +1,15 @@
+#!/bin/bash
+
+purple-remote "setstatus?status=away&message=Not At My Desk"
+/usr/bin/gnome-screensaver-command --lock && purple-remote "setstatus?status=available&message="
+
+#ssh johngalt 'open /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app'
+#ssh breedlove 'rundll32.exe user32.dll, LockWorkStation'
+#while [ `/usr/bin/gnome-screensaver-command --lock` ]
+#/usr/bin/gnome-screensaver-command --lock
+#until [ `/usr/bin/gnome-screensaver-command --lock` ]; do
+#   if [[ $changed -ne "1" ]]; then
+#	changed=1
+#   fi
+#done
+
