@@ -59,9 +59,8 @@ echo -e "\033[1;32mUpdated\033[0m"
 
 if [ -f ./symfony ]; then 
  ./symfony cc 1> /dev/null
-fi
-
 # publish plugin assets
 ./symfony plugin:publish-assets
+fi
 
 

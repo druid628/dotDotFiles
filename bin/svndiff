@@ -1,0 +1,3 @@
+#!/bin/bash
+svn diff $1 -r PREV | colordiff
+

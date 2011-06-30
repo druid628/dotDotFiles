@@ -117,6 +117,7 @@ export PS1='[\[\e[34;1m\]\u\[\e[0m\]\[\e[1;37m\]@\[\e[0m\]\[\e[1;31m\]Eat\[\e[0m
 
 # export PATH=$PATH:~/android/android-sdk-linux_86/tools:~/grails/bin
 
+# adds mkcd command
 . ~/bin/mkcd
 
 ###########################

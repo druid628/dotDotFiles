@@ -1,0 +1,49 @@
+#!/bin/bash
+# Symfony Clear Cache shortcut 
+# Micah Breedlove
+#
+
+if [ $# -lt '1' ]; then
+ echo "SYNTAX ERROR: $0 app"
+ exit;
+fi
+
+function cCache {
+	echo -e "\033[1;31mClearing Cache\033[0m"
+	./symfony cc 1> /dev/null
+	echo -e "\033[1;32mDone\033[0m"
+}
+
+case $1 in
+    "png" )
+	echo ""
+	echo -e "\033[42;31mPnG - Doctrine\033[0m"
+	echo ""
+	cd ~/public_html/pngdoc
+	cCache;;
+    "con" )
+	echo ""
+	echo -e "\033[42;31mConductor\033[0m"
+	echo ""
+	cd ~/public_html/conductor
+	cCache;;
+    "procal" )
+	echo ""
+	echo -e "\033[42;31mProCal\033[0m"
+	echo ""
+	cd ~/public_html/procal
+	cCache;;
+    "all" )
+	echo ""
+	echo -e "\033[42;31mALL\033[0m"
+	echo ""
+	cd ~/public_html/pngdoc
+	cCache
+	cd ~/public_html/conductor
+	cCache
+	cd ~/public_html/procal
+	cCache;;
+     "." )	
+	cCache;;
+esac
+
