@@ -1,0 +1,18 @@
+# -*- shell-script -*-
+# lowercase: a script which declares a function, lowercase.
+# Timestamp: <2007-04-13 ??:??:?? druid lowercase>
+# lowercase accepts any number of commandline arguments and
+# converts them all to lowercase
+# . /path/lowercase
+# That will execute it without launching a new shell, so that it
+# changes your current shell's environment.
+# You can then use the function in scripts or from the terminal to
+# convert text to all lowercase. E.g:
+#
+# $ lowercase Eggs Benedict
+# eggs benedict
+
+function lowercase
+{
+echo $@ |tr '[:upper:]' '[:lower:]'
+}
