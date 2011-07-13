@@ -76,65 +76,7 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# enable color support of ls and also add handy aliases
-#if [ -x /usr/bin/dircolors ]; then
-#    eval "`dircolors -b`"
-#    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
-    #alias grep='grep --color=auto'
-    #alias fgrep='fgrep --color=auto'
-    #alias egrep='egrep --color=auto'
-#fi
-
-# some more ls aliases
-#alias ll='ls -l'
-#alias la='ls -A'
-#alias l='ls -CF'
-
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-fi
-#######################
-# # Personal settings #
-#######################
-
-# turn on cli vi
-set -o vi
-# turn on home bin dir
-if [ -d ~/bin ]; then
-   export PATH=$PATH:~/bin
+if [ -f ~/.bash_env ]; then
+    . ~/.bash_env
 fi
 
-# old ps1's
-# export PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}[\u@\h \W]\$ '
-# export PS1='[\[\e[34;1m\]\u\[\e[0m\]@\[\e[31;1m\]Eat\[\e[0m\]\e[1;33mAt\e[0m\e[1;32mJoes\[\e[0m\] \[\e[37;1m\]\W\[\e[0m\]]\$ '
-export PS1='[\[\e[34;1m\]\u\[\e[0m\]\[\e[1;37m\]@\[\e[0m\]\[\e[1;31m\]Eat\[\e[0m\]\[\e[1;33m\]At\[\e[0m\]\[\e[1;32m\]Joes\[\e[0m\] \[\e[37;1m\]\W\[\e[0m\]]\$ '
-
-# export PATH=$PATH:~/android/android-sdk-linux_86/tools:~/grails/bin
-
-# adds mkcd command
-. ~/bin/mkcd
-
-###########################
-#   Uncomment as needed   #
-###########################
-# GRoovy
-#export GROOVY_HOME='/usr/share/groovy/'
-#export GRAILS_HOME='~/grails'
-
-# Java
-#export JAVA_HOME='/usr/lib/jvm/java-6-sun'
-#export CLASSPATH=.:/usr/share/groovy/lib:/usr/lib/jvm/java-6-sun-1.6.0.16/lib:/usr/share/java:usr/share/java/mysql/mysql-connector-java-5.1.12-bin.jar:$CLASSPATH
-
-# hipHop Crap
-#export HPHP_HOME='~/hipHop/hiphop-php'
-#export HPHP_LIB='~/hipHop/hiphop-php/bin'
-
-# TomCat
-#export CATALINA_HOME='/usr/share/tomcat6'
-#export CATALINA_BASE='/var/lib/tomcat6'
