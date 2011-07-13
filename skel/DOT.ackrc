@@ -1,0 +1,4 @@
+# .ackrc
+--sort-files
+--color
+--pager=less -r
