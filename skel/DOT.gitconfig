@@ -1,10 +1,10 @@
 [user]
-	name = Micah Breedlove
-	email = druid628@gmail.com
+	name = XXXX XXXXXXX
+ email = XXX@XXX.XXX
 [alias]
     st = status
     ci = commit
-    cia = commit -a
+   cia = commit -a
     br = branch
     co = checkout
     df = diff
@@ -16,14 +16,14 @@
     ui = auto
 [color "branch"]
     current = yellow reverse
-    local = yellow
-    remote = green
+      local = yellow
+     remote = green
 [color "diff"]
     meta = yellow bold
     frag = magenta bold
-    old = red bold
-    new = green bold
+     old = red bold
+     new = green bold
 [color "status"]
-    added = yellow
-    changed = green
+        added = yellow
+      changed = green
     untracked = cyan
