@@ -15,11 +15,18 @@ fi
 # export PATH=$PATH:~/android/android-sdk-linux_86/tools:~/grails/bin
 
 # adds mkcd command
-. ~/bin/mkcd
+if [ -f ~/bin/mkcd ]; then
+   . ~/bin/mkcd
+fi
+
+# adds lowercase command
+if [ -f ~/bin/lowercase ]; then
 . ~/bin/lowercase
+fi
 
 # capistrano & capifony need ruby... ewwww
 export PATH=$PATH:/home/micah/.gem/ruby/1.8/bin
+export HISTTIMEFORMAT='%F %T '
 
 
 ###########################
