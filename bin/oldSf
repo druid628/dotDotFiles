@@ -1,0 +1,23 @@
+#!/bin/bash
+if [[ -z `pwd | cut -d '/' -f 4` ||  `pwd | cut -d '/' -f 4` != 'public_html' ]]; then
+	echo "Not a valid web project"
+	exit;
+fi
+
+# Define APP
+APP=`pwd | cut -d '/' -f 5`
+
+if [ -f ~/public_html/$APP/symfony ]; then
+	if [ $# -gt 0 ]; then
+		if [[ $1 = 'permissions' || $1 = 'perm' || $1 = 'perms' ]]; then
+			~/public_html/$APP/symfony project:permissions
+		else
+			~/public_html/$APP/symfony $@
+		fi
+	else
+		~/public_html/$APP/symfony
+	fi
+else
+	echo "Not a valid web project"
+	exit;
+fi

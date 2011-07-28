@@ -1,23 +1,28 @@
 #!/bin/bash
-if [[ -z `pwd | cut -d '/' -f 4` ||  `pwd | cut -d '/' -f 4` != 'public_html' ]]; then
-	echo "Not a valid web project"
-	exit;
-fi
+# 
+# # Symfony1
+# PWD=$(pwd)
+# 
+# while [ "$PWD" != '/' ]; do
+#         if [ -f "$PWD/symfony" ]; then
+#                 php "$PWD/symfony" $@
+#                 exit
+#         fi
+#         cd ..
+# done
+# 
+# echo 'Symfony file could not be found!'
 
-# Define APP
-APP=`pwd | cut -d '/' -f 5`
+# symfony2
+# Expand globs to null when there are no matches
+shopt -s nullglob
 
-if [ -f ~/public_html/$APP/symfony ]; then
-	if [ $# -gt 0 ]; then
-		if [[ $1 = 'permissions' || $1 = 'perm' || $1 = 'perms' ]]; then
-			~/public_html/$APP/symfony project:permissions
-		else
-			~/public_html/$APP/symfony $@
-		fi
-	else
-		~/public_html/$APP/symfony
-	fi
-else
-	echo "Not a valid web project"
-	exit;
-fi
+# Look for either a '<subdir>/console' or a 'symfony' file
+until
+        file=(*/console symfony); [[ -f "$file" ]] && php "$file" "$@" && exit;
+        do
+                [[ "$PWD" == "/" ]] && break;
+                        cd ..
+                        done
+
+                        echo 'No Symfony file could be found!'
