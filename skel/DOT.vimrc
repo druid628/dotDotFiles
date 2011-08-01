@@ -51,6 +51,9 @@
   "let Tlist_Enable_Fold_Column=0
   "let Tlist_WinWidth=50
 
+" Java Getters and Setters from beginning of line
+  map jgs mawv/ <CR>"ty/ <CR>wvwh"ny/getters<CR>$a<CR><CR><Esc>xxapublic <Esc>"tpa<Esc>"npbiget<Esc>l~ea()<CR>{<CR><Tab>return <Esc>"npa;<CR>}<Esc>=<CR><Esc>/setters<CR>$a<CR><CR><Esc>xxapublic void <Esc>"npbiset<Esc>l~ea(<Esc>"tpa <Esc>"npa)<CR>{<CR><Tab>this.<Esc>"npa= <Esc>"npa;<CR>}<Esc>=<CR>`ak
+
 " Make UP and DOWN keys scroll whole page -- not working --
   nnoremap <DOWN> 1<C-E>j
   nnoremap <UP> 1<C-Y>k

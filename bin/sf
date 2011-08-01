@@ -1,4 +1,8 @@
 #!/bin/bash
+# NOT MY OWN!
+# Came from: http://vvv.tobiassjosten.net/symfony/symfony2-cli-bash-script 
+#                   and
+#            https://gist.github.com/275690
 # 
 # # Symfony1
 # PWD=$(pwd)
