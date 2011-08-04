@@ -52,7 +52,7 @@
   "let Tlist_WinWidth=50
 
 " Java Getters and Setters from beginning of line
-  map jgs mawv/ <CR>"ty/ <CR>wvwh"ny/getters<CR>$a<CR><CR><Esc>xxapublic <Esc>"tpa<Esc>"npbiget<Esc>l~ea()<CR>{<CR><Tab>return <Esc>"npa;<CR>}<Esc>=<CR><Esc>/setters<CR>$a<CR><CR><Esc>xxapublic void <Esc>"npbiset<Esc>l~ea(<Esc>"tpa <Esc>"npa)<CR>{<CR><Tab>this.<Esc>"npa= <Esc>"npa;<CR>}<Esc>=<CR>`ak
+  map ,jgs mawv/ <CR>"ty/ <CR>wvwh"ny/getters<CR>$a<CR><CR><Esc>xxapublic <Esc>"tpa<Esc>"npbiget<Esc>l~ea()<CR>{<CR><Tab>return <Esc>"npa;<CR>}<Esc>=<CR><Esc>/setters<CR>$a<CR><CR><Esc>xxapublic void <Esc>"npbiset<Esc>l~ea(<Esc>"tpa <Esc>"npa)<CR>{<CR><Tab>this.<Esc>"npa= <Esc>"npa;<CR>}<Esc>=<CR>`ak
 
 " Make UP and DOWN keys scroll whole page -- not working --
   nnoremap <DOWN> 1<C-E>j
@@ -102,7 +102,6 @@
 " KEY MAPPINGS
 "------------------------------------------------------------------------------
 
-    map gg :1<CR>
   " Select tabs with command+#, just like in iTerm, Firefox, Chrome, etc. <3 -- Thanks, Richtaur! -- not working --
     map <D-1> 1gt
     map <D-2> 2gt
@@ -164,10 +163,10 @@
     map <D-s> :w
 
   " Need a new line? BR below...
-    map brb o<ESC>k
+    map ,brb o<ESC>k
 
   " BR above...
-    map bra O<ESC>j
+    map ,bra O<ESC>j
 
   " Search and replace.
     map ,sr :%s/
@@ -176,7 +175,7 @@
     map <C-x> :bd<CR>
 
   " g + direction for window split change. This beats the hell out of CTRL + W + direction.
-    map g <C-w>
+    map ,g <C-w>
 
   " Set TAB to allow for auto-completion (note: this RULES)
     fun! InsertTabWrapper()
