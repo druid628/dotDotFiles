@@ -1,33 +1,28 @@
 # turn on cli vi
 set -o vi
+export HISTTIMEFORMAT='%F %T '
+
+# adds bash functions like lowercase, mkcd and patthadd
+if [ -f ~/.bash_functions ]; then
+    . ~/.bash_functions
+fi
+
 # turn on home bin dir
 if [ -d ~/bin ]; then
    export PATH=$PATH:~/bin
 fi
 
-# old ps1's
-# export PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}[\u@\h \W]\$ '
-# export PS1='[\[\e[34;1m\]\u\[\e[0m\]@\[\e[31;1m\]Eat\[\e[0m\]\e[1;33mAt\e[0m\e[1;32mJoes\[\e[0m\] \[\e[37;1m\]\W\[\e[0m\]]\$ '
-# export PS1='[\[\e[34;1m\]\u\[\e[0m\]\[\e[1;37m\]@\[\e[0m\]\[\e[1;31m\]Eat\[\e[0m\]\[\e[1;33m\]At\[\e[0m\]\[\e[1;32m\]Joes\[\e[0m\] \[\e[37;1m\]\W\[\e[0m\]]\$ ' # Standard Colorized '[\u@\h \W]\$ '
-# export PS1='[\[\e[34;1m\]\u\[\e[0m\]\[\e[1;37m\]@\[\e[0m\]\[\e[1;32m\]\h\[\e[0m\] \[\e[37;1m\]\W\[\e[0m\]\[\e[1;36m\]$(__git_ps1 " (%s)")\[\e[0m\]]\$ ' # standard with git branch instance '[\u@\h \W (git-branch)]\$ '
-
-
-# export PATH=$PATH:~/android/android-sdk-linux_86/tools:~/grails/bin
-
-# adds mkcd command
-if [ -f ~/bin/mkcd ]; then
-   . ~/bin/mkcd
-fi
-
-# adds lowercase command
-if [ -f ~/bin/lowercase ]; then
-. ~/bin/lowercase
-fi
+BLACK="\[\033[0;38m\]"
+RED="\[\033[0;31m\]"
+RED_BOLD="\[\033[01;31m\]"
+BLUE="\[\033[01;34m\]"
+GREEN="\[\033[0;32m\]"
 
 # capistrano & capifony need ruby... ewwww
-export PATH=$PATH:/home/micah/.gem/ruby/1.8/bin
-export HISTTIMEFORMAT='%F %T '
+#export PATH=$PATH:~/.gem/ruby/1.8/bin
 
+# Adds Android sdk
+# export PATH=$PATH:~/android/android-sdk-linux_86/tools
 
 ###########################
 #   Uncomment as needed   #
@@ -35,6 +30,7 @@ export HISTTIMEFORMAT='%F %T '
 # GRoovy
 #export GROOVY_HOME='/usr/share/groovy/'
 #export GRAILS_HOME='~/grails'
+#export PATH=$PATH::~/grails/bin
 
 # Java
 #export JAVA_HOME='/usr/lib/jvm/java-6-sun'
@@ -47,3 +43,9 @@ export HISTTIMEFORMAT='%F %T '
 # TomCat
 #export CATALINA_HOME='/usr/share/tomcat6'
 #export CATALINA_BASE='/var/lib/tomcat6'
+
+# old ps1's
+# export PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}[\u@\h \W]\$ '
+# export PS1='[\[\e[34;1m\]\u\[\e[0m\]@\[\e[31;1m\]Eat\[\e[0m\]\e[1;33mAt\e[0m\e[1;32mJoes\[\e[0m\] \[\e[37;1m\]\W\[\e[0m\]]\$ '
+# export PS1='[\[\e[34;1m\]\u\[\e[0m\]\[\e[1;37m\]@\[\e[0m\]\[\e[1;31m\]Eat\[\e[0m\]\[\e[1;33m\]At\[\e[0m\]\[\e[1;32m\]Joes\[\e[0m\] \[\e[37;1m\]\W\[\e[0m\]]\$ ' # Standard Colorized '[\u@\h \W]\$ '
+# export PS1='[\[\e[34;1m\]\u\[\e[0m\]\[\e[1;37m\]@\[\e[0m\]\[\e[1;32m\]\h\[\e[0m\] \[\e[37;1m\]\W\[\e[0m\]\[\e[1;36m\]$(__git_ps1 " (%s)")\[\e[0m\]]\$ ' # standard with git branch instance '[\u@\h \W (git-branch)]\$ '
