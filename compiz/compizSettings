@@ -1,0 +1,68 @@
+[vpswitch]
+as_switch_to_1_key = <Super>1
+as_switch_to_2_key = <Super>2
+as_switch_to_3_key = <Super>3
+as_switch_to_4_key = <Super>4
+
+[cube]
+as_unfold_key = <Control><Alt><Super>space
+as_next_slide_key = Disabled
+s0_mipmap = false
+
+[gnomecompat]
+as_main_menu_key = <Super>F1
+as_run_command_terminal_key = <Control><Alt>t
+
+[rotate]
+as_flip_time = 250
+as_raise_on_rotate = true
+as_rotate_to_1_key = <Super>1
+as_rotate_to_2_key = <Super>2
+as_rotate_to_3_key = <Super>3
+as_rotate_to_4_key = <Super>4
+as_rotate_to_1_window_key = <Shift><Super>1
+as_rotate_to_2_window_key = <Shift><Super>2
+as_rotate_to_3_window_key = <Shift><Super>3
+as_rotate_to_4_window_key = <Shift><Super>4
+
+[decoration]
+as_shadow_radius = 9.000000
+as_command = gtk-window-decorator --replace
+
+[core]
+as_active_plugins = core;regex;imgjpeg;neg;vpswitch;resize;text;png;dbus;gnomecompat;place;commands;workarounds;svg;session;mousepoll;resizeinfo;decoration;snap;animation;fade;move;cube;rotate;expo;staticswitcher;scale;scaleaddon;
+as_cursor_theme = DMZ-White
+as_cursor_size = 24
+as_autoraise = false
+as_autoraise_delay = 500
+as_minimize_window_key = <Super>H
+as_maximize_window_key = Disabled
+as_show_desktop_key = <Super>d
+as_toggle_window_maximized_key = <Super>X
+as_toggle_window_shaded_key = Disabled
+s0_outputs = 1680x1050+0+0;1280x800+1680+0;
+
+[put]
+as_put_left_key = Disabled
+as_put_right_key = Disabled
+as_put_top_key = Disabled
+as_put_bottom_key = Disabled
+as_put_topleft_key = Disabled
+as_put_topright_key = Disabled
+as_put_bottomleft_key = Disabled
+as_put_bottomright_key = Disabled
+
+[expo]
+as_expo_button = <Super>Button2
+as_expo_edge = BottomLeft
+as_exit_button = Button2
+as_deform = 2
+
+[fade]
+s0_fullscreen_visual_bell = true
+
+[wall]
+as_preview_timeout = 0.314200
+as_allow_wraparound = true
+s0_edgeflip_move = true
+
