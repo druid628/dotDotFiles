@@ -21,20 +21,21 @@
 
     " font settings
     :colo molokai
-    :tabnew ~/Dropbox/symfony_api.md
+    " :colo moria
+    " :tabnew ~/Dropbox/symfony_api.md
 
     " misc
       " remove the toolbar and scrollbars
         set guioptions-=Tlr 
         set go-=T
-        set transp=8
+        " set transp=8
         set lines=700
         set columns=130
 
     if has("mac")
       set guifont=Consolas:h13
-    elseif has("unix")
-      set guifont=Liberation\ Mono\ 9 bold
+    "elseif has("unix")
+      "set guifont=Liberation\ Mono\ 9 bold
     elseif has("win32") || has("win64")
       set guifont=Consolas:h10:cANSI
     endif
@@ -97,25 +98,33 @@
   :filetype plugin on
   :syntax on
 
+  au FileType php set omnifunc=phpcomplete#CompletePHP
+  let php_sql_query=1
+  let php_htmlInStrings=1
+  ":setlocal omnifunc=javacomplete#Complete
+   if has("autocmd")
+     autocmd Filetype java setlocal omnifunc=javacomplete#Complete
+   endif
+
 
 "------------------------------------------------------------------------------
 " KEY MAPPINGS
 "------------------------------------------------------------------------------
 
   " Select tabs with command+#, just like in iTerm, Firefox, Chrome, etc. <3 -- Thanks, Richtaur! -- not working --
-    map <D-1> 1gt
-    map <D-2> 2gt
-    map <D-3> 3gt
-    map <D-4> 4gt
-    map <D-5> 5gt
-    map <D-6> 6gt
-    map <D-7> 7gt
-    map <D-8> 8gt
-    map <D-9> 9gt
+  "  map <D-1> 1gt
+  "  map <D-2> 2gt
+  "  map <D-3> 3gt
+  "  map <D-4> 4gt
+  "  map <D-5> 5gt
+  "  map <D-6> 6gt
+  "  map <D-7> 7gt
+  "  map <D-8> 8gt
+  "  map <D-9> 9gt
 
   " Symfony Keys -- uses shell scripts I've set up.
-    map ,scc :scc<CR>
-    map ,sbar :ccbar<CR>
+  "  map ,scc :scc<CR>
+  "  map ,sbar :ccbar<CR>
 
   " Various shortcuts for working with tabs
     map ,t :tabnew  
@@ -143,8 +152,8 @@
   "  map <silent>xy mk<CR>:silent<CR>yy'k
 
   " Let's use jj as an alternative to the ESC key
-    inoremap jj <Esc>
-    nnoremap JJJJ <Nop>
+  "  inoremap jj <Esc>
+  "  nnoremap JJJJ <Nop>
 
   " Nobody likes typing about :set nu and :set nonu to toggle line numbers
     map ,# :set nu<CR>
