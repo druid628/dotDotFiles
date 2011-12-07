@@ -97,7 +97,7 @@
   set listchars=extends:…,tab:\ \ ,trail:⌫
   :filetype plugin on
   :syntax on
-
+  au BufNewFile,BufRead *.groovy self groovy
   au FileType php set omnifunc=phpcomplete#CompletePHP
   let php_sql_query=1
   let php_htmlInStrings=1
@@ -105,6 +105,7 @@
    if has("autocmd")
      autocmd Filetype java setlocal omnifunc=javacomplete#Complete
    endif
+
 
 
 "------------------------------------------------------------------------------
