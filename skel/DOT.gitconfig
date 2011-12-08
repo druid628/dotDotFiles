@@ -27,3 +27,5 @@
         added = yellow
       changed = green
     untracked = cyan
+[core]
+	excludesfile = /home/druid/.gitignore_global
