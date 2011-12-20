@@ -18,9 +18,10 @@ alias duh='du -h'					# because i kept typing duh instead of du -h
 alias gerp="egrep --exclude=\*.svn\* -r -n"
 alias records='uprecords'
 alias bhg='cat $HISTFILE| grep'
-alias can-has='apt-get install'
+alias i-can-haz='apt-get install'
 alias git='~/bin/git-achievements'
 alias diff="/usr/bin/diff -y"				# diff preference
+alias alex="/usr/bin/axel -a"
 
 # SVN options
 alias getNew="svn st |grep ? | cut -d ' ' -f 8"		# gets New files not under svn's control
