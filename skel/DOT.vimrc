@@ -10,6 +10,8 @@
     set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
   endif
 
+call pathogen#infect()
+
 " a ruler on steroids
   set ruler
   set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
