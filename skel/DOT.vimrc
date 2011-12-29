@@ -159,20 +159,27 @@ call pathogen#infect()
   "  nnoremap JJJJ <Nop>
 
   " Nobody likes typing about :set nu and :set nonu to toggle line numbers
-    map ,# :set nu<CR>
-    map ,## :set nonu<CR>
+    map ,# :set nu!<CR>
+
+  " toggle 
+    function! g:ToggleNuMode()
+       if(&rnu == 1)
+          set nu
+       else
+          set rnu
+       endif
+    endfunc
+
+    nnoremap <C-l> :call g:ToggleNuMode()<CR>
 
   " Same goes for :set wrap and set nowrap
-    map ,w :set wrap<CR>
-    map ,ww :set nowrap<CR>
+    map ,w :set wrap!<CR>
 
   " Set Paste/NoPaste.
-    map ,pa :set paste<CR>
-    map ,npa :set nopaste<CR>
+    map ,pa :set paste!<CR>
 
   " Boy, typing :w sure is a pain!
     map ; :w<CR>
-    map <D-s> :w
 
   " Need a new line? BR below...
     map ,brb o<ESC>k
@@ -924,6 +931,21 @@ abbreviate saturday Saturday
     inoremap ,cba background:;<ESC>ha<SPACE>
     inoremap ,cbp background-position:;<ESC>ha<SPACE>
     inoremap ,cfo font:;<ESC>ha<SPACE>
+
+     " Default values
+     let g:pdv_cfg_Type = "mixed"
+     let g:pdv_cfg_Package = ""
+     let g:pdv_cfg_Version = "$id$"
+     let g:pdv_cfg_Author = "Micah Breedlove <micah@blueshamrock.com>"
+     let g:pdv_cfg_Copyright = "2010-2011 Blue Shamrock Development"
+     let g:pdv_cfg_License = "PHP Version 3.0 {@link http://www.php.net/license/3_0.txt}"
+
+
+    source ~/.vim/plugin/phpdoc.vim
+    inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i
+    nnoremap <C-P> :call PhpDocSingle()<CR>
+    vnoremap <C-P> :call PhpDocRange()<CR>
+
 
 "------------------------------------------------------------------------------
 " SEMANTAC CORRECTION
