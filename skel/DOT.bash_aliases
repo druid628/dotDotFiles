@@ -22,6 +22,7 @@ alias i-can-haz='apt-get install'
 alias git='~/bin/git-achievements'
 alias diff="/usr/bin/diff -y"				# diff preference
 alias ack-grep-less="/usr/bin/ack-grep --pager="/usr/bin/less -r"
+alias alex="/usr/bin/axel -a"
 
 # SVN options
 alias getNew="svn st |grep ? | cut -d ' ' -f 8"		# gets New files not under svn's control
