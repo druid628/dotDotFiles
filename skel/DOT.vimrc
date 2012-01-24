@@ -46,6 +46,16 @@ call pathogen#infect()
 
   endif
 
+" cTags
+"  :set tags=<filename>.ctags.vim
+  if filereadable("ctags.vim")
+      set tags=ctags.vim
+  endif
+  " map <leader>tm <C-]>
+  " map <leader>tmb <C-t>
+  map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+
+
 " Tag List Options
   "let Tlist_Use_Right_Window=1
   "let Tlist_Use_Horiz_Window=0
