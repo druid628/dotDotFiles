@@ -9,8 +9,8 @@
     co         = checkout
     df         = diff
     lg         = log - p
-    lol        = log --graph --decorate --pretty  = oneline --abbrev-commit
-    lola       = log --graph --decorate --pretty  = oneline --abbrev-commit --all
+    lol        = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola       = log --graph --decorate --pretty=oneline --abbrev-commit --all
     ls         = ls-files
     changed    = diff --name-only master..develop
     pet-kitten = rebase
