@@ -2,16 +2,18 @@
 	name = XXXX XXXXXXX
  email = XXX@XXX.XXX
 [alias]
-    st = status
-    ci = commit
-   cia = commit -a
-    br = branch
-    co = checkout
-    df = diff
-    lg = log - p
-   lol = log --graph --decorate --pretty=oneline --abbrev-commit
-  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
-    ls = ls-files
+    st         = status
+    ci         = commit
+    cia        = commit -a
+    br         = branch
+    co         = checkout
+    df         = diff
+    lg         = log - p
+    lol        = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola       = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    ls         = ls-files
+    changed    = diff --name-only master..develop
+    pet-kitten = rebase
 [color]
     ui = auto
 [color "branch"]
