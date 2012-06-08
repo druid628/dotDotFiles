@@ -12,29 +12,26 @@ tmux rename-window -t $sessionName:0 'General'
 tmux new-window -t $sessionName:1 -n 'HOME' 
 
 case $1 in
-
-ENV1)
-
-cd /path/to/dir/
-tmux new-window -t $sessionName:2 -n 'ENV1NAME1' 
-cd /path/to/dir/
-tmux new-window -t $sessionName:3 -n 'ENV1NAME2' 
-;;
-
-ENV2)
-cd /path/to/dir/
-tmux new-window -t $sessionName:2 -n 'ENV2NAME1' 
-;;
-
-ENV3)
-cd /path/to/dir/
-tmux new-window -t $sessionName:2 -n 'ENV3NAME1' 
-cd /path/to/dir/
-tmux new-window -t $sessionName:3 -n 'ENV3NAME1' 
-cd /path/to/dir/
-tmux new-window -t $sessionName:4 -n 'ENV3NAME1' 
-;;
-
+    ENV1)
+        cd /path/to/dir/
+        tmux new-window -t $sessionName:2 -n 'ENV1NAME1' 
+        cd /path/to/dir/
+        tmux new-window -t $sessionName:3 -n 'ENV1NAME2' 
+    ;;
+    
+    ENV2)
+        cd /path/to/dir/
+        tmux new-window -t $sessionName:2 -n 'ENV2NAME1' 
+    ;;
+    
+    ENV3)
+        cd /path/to/dir/
+        tmux new-window -t $sessionName:2 -n 'ENV3NAME1' 
+        cd /path/to/dir/
+        tmux new-window -t $sessionName:3 -n 'ENV3NAME1' 
+        cd /path/to/dir/
+        tmux new-window -t $sessionName:4 -n 'ENV3NAME1' 
+    ;;
 esac
 
 tmux select-window -t $sessionName:1
