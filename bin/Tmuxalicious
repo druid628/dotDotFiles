@@ -5,6 +5,17 @@ if [ $# == 0 ]; then
 fi
 
 sessionName=$HOSTNAME"-"$1
+`tmux has -t $sessionName` 
+blah=$?
+if [ $blah  -eq 0 ]; then
+    read -p "Session exists. Attach? " REPLY
+    if [[ $REPLY =~ ^[Yy]$ ]]
+    then
+        tmux -2 attach-session -t $sessionName
+        exit 0
+    fi
+fi
+
 
 tmux new-session -d -s $sessionName
 
