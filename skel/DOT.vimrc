@@ -54,7 +54,7 @@ call pathogen#infect()
   " map <leader>tm <C-]>
   " map <leader>tmb <C-t>
   map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
-  map <C-]><C-[>  :vsp<CR>:exec("tag ".expand("<cword>"))<CR>
+  map <C-[><C-]>  :vsp<CR>:exec("tag ".expand("<cword>"))<CR>
 
 
 " Tag List Options
