@@ -21,8 +21,3 @@ if [ -z $1 ] || [ $1 != "--no-io" ]; then
   cd $HOME/ioBashExtras
   ./install.sh $HOME/.bashrc
 fi
-echo "#######################################################"
-echo "#                                                     #"
-echo "#       DON'T FORGET TO UPDATE YOUR .gitconfig !      #"
-echo "#                                                     #"
-echo "#######################################################"

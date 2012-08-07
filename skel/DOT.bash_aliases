@@ -24,7 +24,7 @@ alias diff="/usr/bin/diff -y"				# diff preference
 alias ack-grep-less="/usr/bin/ack-grep --pager="/usr/bin/less -r"
 alias getComposer='curl -s http://getcomposer.org/installer | php'
 alias alex="/usr/bin/axel -a"
-alias my-ext-ip="curl ifconfig.me"
+alias ifconfig.me="curl ifconfig.me"
 
 # SVN options
 alias getNew="svn st |grep ? | cut -d ' ' -f 8"		# gets New files not under svn's control

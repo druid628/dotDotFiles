@@ -1,6 +1,6 @@
 [user]
-	name = XXXX XXXXXXX
- email = XXX@XXX.XXX
+    name  = Micah Breedlove
+    email = druid628@gmail.com
 [alias]
     st         = status
     ci         = commit
