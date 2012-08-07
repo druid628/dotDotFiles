@@ -15,6 +15,7 @@
     lola       = log --graph --decorate --pretty=oneline --abbrev-commit --all
     ls         = ls-files
     changed    = diff --name-only master..develop
+    make-patch = diff --no-prefix
     pet-kitten = rebase
 [color]
     ui = auto
