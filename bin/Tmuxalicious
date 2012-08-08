@@ -1,7 +1,10 @@
 #!/bin/bash
+if [ -e $HOME/.bashrc ]; then
+. $HOME/.bashrc
+fi
 
 if [ $# == 0 ]; then
-   echo "I need an environment buddy."
+   echo "I need a session environment buddy."
 fi
 
 sessionName=$HOSTNAME"-"$1
@@ -16,34 +19,31 @@ if [ $blah  -eq 0 ]; then
     fi
 fi
 
+reqSession=$1
+if [ -e $HOME/.tmuxalicious/$reqSession.tmux ]; then
+    tmux new-session -d -s $sessionName
+    tmux rename-window -t $sessionName:0 'General' 
+    tmux new-window -t $sessionName:1 -n 'HOME' 
+    sh $HOME/.tmuxalicious/$reqSession.tmux
+else
+    echo "Please try a session environment which actually exists.";
+    exit 0
+fi
 
-tmux new-session -d -s $sessionName
-
-tmux rename-window -t $sessionName:0 'General' 
-tmux new-window -t $sessionName:1 -n 'HOME' 
-
-case $1 in
-    ENV1)
-        cd /path/to/dir/
-        tmux new-window -t $sessionName:2 -n 'ENV1NAME1' 
-        cd /path/to/dir/
-        tmux new-window -t $sessionName:3 -n 'ENV1NAME2' 
-    ;;
-    
-    ENV2)
-        cd /path/to/dir/
-        tmux new-window -t $sessionName:2 -n 'ENV2NAME1' 
-    ;;
-    
-    ENV3)
-        cd /path/to/dir/
-        tmux new-window -t $sessionName:2 -n 'ENV3NAME1' 
-        cd /path/to/dir/
-        tmux new-window -t $sessionName:3 -n 'ENV3NAME1' 
-        cd /path/to/dir/
-        tmux new-window -t $sessionName:4 -n 'ENV3NAME1' 
-    ;;
-esac
-
+cd ~
 tmux select-window -t $sessionName:1
 tmux -2 attach-session -t $sessionName
+exit 0
+
+
+################################################################
+##  $reqSession.tmux files should look like:
+## ------------------------------------------
+##        #!/bin/bash
+##        cd  /path/to/project
+##        tmux new-window -t $sessionName:5 -n 'projectName'  
+##        cd  /path/to/project/logs
+##        tmux new-window -t $sessionName:5 -n 'projectName-logs'  
+## ------------------------------------------
+## 
+################################################################
