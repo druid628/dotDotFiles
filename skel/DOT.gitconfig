@@ -1,6 +1,6 @@
 [user]
-	name = XXXX XXXXXXX
- email = XXX@XXX.XXX
+    name  = Micah Breedlove
+    email = druid628@gmail.com
 [alias]
     st         = status
     ci         = commit
@@ -8,11 +8,14 @@
     br         = branch
     co         = checkout
     df         = diff
-    lg         = log - p
+    pl         = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+    pla        = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all --
+    lg         = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
     lol        = log --graph --decorate --pretty=oneline --abbrev-commit
     lola       = log --graph --decorate --pretty=oneline --abbrev-commit --all
     ls         = ls-files
     changed    = diff --name-only master..develop
+    make-patch = diff --no-prefix
     pet-kitten = rebase
 [color]
     ui = auto
