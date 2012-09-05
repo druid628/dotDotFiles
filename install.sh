@@ -15,6 +15,12 @@ do
   fi
   ln -s `pwd`/$f $HOME/$NEWFILENAME
 done
+cd ../
+if [ -d $HOME/.vim ]; then
+   echo "update your .vim folder"
+else
+   ln -s vim $HOME/.vim
+fi
 echo "Copy your bin/ files as needed."
 #  if [ $IO == "YES" ]; then
 #     if [ -z $1 ] || [ $1 != "--no-io" ]; then
