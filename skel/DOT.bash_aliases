@@ -21,7 +21,7 @@ alias bhg='cat $HISTFILE| grep'
 alias i-can-haz='apt-get install'
 alias git='~/bin/git-achievements'
 alias diff="/usr/bin/diff -y"				# diff preference
-alias ack-grep-less="/usr/bin/ack-grep --pager="/usr/bin/less -r"
+alias ack-grep-less="/usr/bin/ack-grep --pager='/usr/bin/less -r'"
 alias getComposer='curl -s http://getcomposer.org/installer | php'
 alias alex="/usr/bin/axel -a"
 alias ifconfig.me="curl ifconfig.me"
