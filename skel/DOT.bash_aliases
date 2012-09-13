@@ -26,12 +26,6 @@ alias getComposer='curl -s http://getcomposer.org/installer | php'
 alias alex="/usr/bin/axel -a"
 alias ifconfig.me="curl ifconfig.me"
 
-if [ -f '/usr/bin/svn' ]; then
- # SVN options
- alias getNew="svn st |grep ? | cut -d ' ' -f 8"		# gets New files not under svn's control
- alias getMods="svn st |grep '^M' | cut -d ' ' -f 8"	# gets modified only files under svn's control
- alias getAdds="svn st |grep '^A' | cut -d ' ' -f 8"	# gets only files which have been added to svn's control and have yet to be committed
- alias 2BC="svn st |egrep '^A|^M' | cut -d ' ' -f 8"	# 2 Be Committed - only files which have been modified or added & are awaiting to be committed
- alias hideNew="svn st |sed '/?/d' | cut -d ' ' -f 8"	# give me everything  (including external repos) except new unrevisioned files
- # alias fixCache='sudo chown -R micah:micah cache/ log/ web/'   # just something used occasionally - cannot rem why it was created
+if [ -f '~/.svn_aliases' ]; then
+  . ~/.svn_aliases
 fi

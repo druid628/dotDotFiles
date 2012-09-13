@@ -4,8 +4,10 @@ if [ -z "$1" ] || [ "${1}" = "--no-io" ]; then
 else
   IO="YES"
 fi
+
 echo "Setting up Bash the way you like it (Part 1)"
 cd skel
+
 for f in $(ls DOT.*)
 do
   NEWFILENAME=`echo $f | sed 's/DOT//'`
@@ -15,13 +17,24 @@ do
   fi
   ln -s `pwd`/$f $HOME/$NEWFILENAME
 done
+
+# move back to dotDotFiles
 cd ../
+
+# bin dir
+if [ -d $HOME/bin ]; then
+   echo "Copy and update your bin/ files as needed."
+else
+   ln -s bin $HOME/bin
+fi
+
+# .vim dir
 if [ -d $HOME/.vim ]; then
    echo "update your .vim folder"
 else
    ln -s vim $HOME/.vim
 fi
-echo "Copy your bin/ files as needed."
+
 #  if [ $IO == "YES" ]; then
 #     if [ -z $1 ] || [ $1 != "--no-io" ]; then
 #       echo "Performing git Magic-ness"
