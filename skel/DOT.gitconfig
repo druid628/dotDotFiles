@@ -17,6 +17,7 @@
     changed    = diff --name-only master..develop
     make-patch = diff --no-prefix
     pet-kitten = rebase
+    cr         = diff --no-prefix HEAD~..HEAD
 [color]
     ui = auto
 [color "branch"]
