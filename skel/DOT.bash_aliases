@@ -1,4 +1,10 @@
-# ~/.bash_aliases, instead of adding them here directly.
+# ~/.bash_aliases
+# Generic non-system-specific should be able to use most everywhere aliases
+# go here
+#
+# System specific ones go in .local_aliases
+# 
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     eval "`dircolors -b`"
