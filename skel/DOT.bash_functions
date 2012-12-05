@@ -36,9 +36,28 @@ echo $@ |tr '[:upper:]' '[:lower:]'
 }
 
 
+# pathadd: Lazy man's way to add to your path
+# Timestamp: <2011-09-19 13:55:53>
+# pathadd takes a directory path and adds it to your path
+# env variable
 function pathadd() 
 {
     if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
-            PATH="$PATH:$1"
+            export PATH="$PATH:$1"
     fi
 }
+
+
+# include_function_file 
+# Taken from ioBashExtras by Jeremy G. ( @jgintlio )
+#
+# example: include_function_file "$HOME/.bash_functions"
+function include_function_file {
+   if [ -f "${1}" ];then
+     source "${1}" 
+   else
+    echo "File not found: ${1}"
+   fi
+
+}
+
