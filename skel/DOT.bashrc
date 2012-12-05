@@ -2,6 +2,10 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+if [ -f ~/.bash_functions ]; then
+    . ~/.bash_functions
+fi
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -50,12 +54,11 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-	export PS1='[\[\e[34;1m\]\u\[\e[0m\]@\[\e[31;1m\]Eat\[\e[0m\]\e[1;33mAt\e[0m\e[1;32mJoes\[\e[0m\] \[\e[34;1m\]\W\[\e[0m\]]\$ '
-    #PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    export PS1='[\[\e[34;1m\]\u\[\e[0m\]\[\e[1;37m\]@\[\e[0m\]\[\e[1;32m\]\h\[\e[0m\] \[\e[37;1m\]\W\[\e[0m\]\[\e[1;36m\]$(__git_ps1 " (%s)")\[\e[0m\]]\$'
 else
-    PS1='${debian_chroot:+($debian_chroot)}[\u@\h:\w]\$ '
+    export PS1='${debian_chroot:+($debian_chroot)}[\u@\h:\w]\$ '
 fi
+
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
@@ -80,7 +83,4 @@ if [ -f ~/.bash_env ]; then
     . ~/.bash_env
 fi
 
-if [ -f ~/.bash_functions ]; then
-    . ~/.bash_functions
-fi
 
