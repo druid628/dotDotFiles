@@ -53,21 +53,6 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-BLACK="\[\e[0;38m\]"
-RED="\[\e[31;1m\]";
-RED_BOLD="\[\e[01;31m\]"
-LIGHT_BLUE="\[\e[1;36m\]";
-BLUE="\[\e[34;1m\]";
-WHITE="\[\e[1;37m\]";
-GREEN="\[\e[1;32m\]";
-WHITE_ON_BLUE="\[\e[44;1;37m\]";
-WHITE_ON_GREEN="\[\e[42;1;37m\]";
-END_COLOR="\[\e[0m\]";
-
-#GREEN="\[\033[0;32m\]"
-#BLUE="\[\033[01;34m\]"
-
-
 if [ "$color_prompt" = yes ]; then
     export PS1='[\[\e[34;1m\]\u\[\e[0m\]\[\e[1;37m\]@\[\e[0m\]\[\e[1;32m\]\h\[\e[0m\] \[\e[37;1m\]\W\[\e[0m\]\[\e[1;36m\]$(__git_ps1 " (%s)")\[\e[0m\]]\$'
 else

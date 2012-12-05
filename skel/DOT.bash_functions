@@ -52,12 +52,12 @@ function pathadd()
 # Taken from ioBashExtras by Jeremy G. ( @jgintlio )
 #
 # example: include_function_file "$HOME/.bash_functions"
-function include_function_file {
+function include_function_file 
+{
    if [ -f "${1}" ];then
      source "${1}" 
    else
     echo "File not found: ${1}"
    fi
-
 }
 

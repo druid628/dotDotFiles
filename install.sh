@@ -1,11 +1,7 @@
 #!/bin/bash
-if [ -z "$1" ] || [ "${1}" = "--no-io" ]; then
-  IO="NO"
-else
-  IO="YES"
-fi
-
-echo "Setting up Bash the way you like it (Part 1)"
+ECHO=`which echo`
+. skel/DOT.colors
+$ECHO -e "${BLUE}[dotDotFiles]${NC} Setting up Bash the way you like it."
 cd skel
 
 for f in $(ls DOT.*)
@@ -23,39 +19,24 @@ cd ../
 
 # bin dir
 if [ -d $HOME/bin ]; then
-   echo "Copy and update your bin/ files as needed."
+   $ECHO -e "${BLUE}[dotDotFiles]${NC} Copy and update your bin/ files as needed."
 else
    ln -s bin $HOME/bin
 fi
 
 # .vim dir
 if [ -d $HOME/.vim ]; then
-   echo "update your .vim folder"
+   $ECHO -e "${BLUE}[dotDotFiles]${NC} Update your .vim folder"
 else
    ln -s vim $HOME/.vim
 fi
 
-
 # update gitconfig
-echo "Configure gitconfig? (y/n):"
-#read answer
-#if [ $answer == "y" ]; then
-read -n1 -p "Configure gitconfig? (y/n) "
+$ECHO -e "${BLUE}[dotDotFiles]${NC} ${RED_BOLD}Configure gitconfig?${NC} (y/n):"
+read REPLY
 if [ "$REPLY" == "y" ]; then
     echo "Gimme your email address:"
     read EMAIL
-    # sed -i "s/druid628\@gmail\.com/$EMAIL/" $HOME/.gitconfig
-    echo "[Success] .gitconfig hath been updated."
-#fi
-
-#  if [ $IO == "YES" ]; then
-#     if [ -z $1 ] || [ $1 != "--no-io" ]; then
-#       echo "Performing git Magic-ness"
-#       git submodule update --init --recursive
-#       cd ../
-#       echo "Setting up Bash the way you like it: The sequel" 
-#       cp ioBashExtras $HOME
-#       cd $HOME/ioBashExtras
-#       ./install.sh $HOME/.bashrc
-#     fi
-#  fi
+    sed -i "s/druid628\@gmail\.com/$EMAIL/" $HOME/.gitconfig
+    $ECHO -e "${GREEN_BOLD}[Success] .gitconfig hath been updated.${NC}"
+fi
