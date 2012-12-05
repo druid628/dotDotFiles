@@ -35,6 +35,19 @@ else
    ln -s vim $HOME/.vim
 fi
 
+
+# update gitconfig
+echo "Configure gitconfig? (y/n):"
+#read answer
+#if [ $answer == "y" ]; then
+read -n1 -p "Configure gitconfig? (y/n) "
+if [ "$REPLY" == "y" ]; then
+    echo "Gimme your email address:"
+    read EMAIL
+    # sed -i "s/druid628\@gmail\.com/$EMAIL/" $HOME/.gitconfig
+    echo "[Success] .gitconfig hath been updated."
+#fi
+
 #  if [ $IO == "YES" ]; then
 #     if [ -z $1 ] || [ $1 != "--no-io" ]; then
 #       echo "Performing git Magic-ness"
