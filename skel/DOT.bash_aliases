@@ -43,7 +43,7 @@ if [ -f '/usr/bin/axel' ]; then
 fi
 
 # anything specific to the local box
-if [ -f '~/.local_aliases' ]; then
+if [ -f $HOME/.local_aliases ]; then
   . ~/.local_aliases
 fi
 
