@@ -9,40 +9,31 @@ fi
 
 # turn on home bin dir
 if [ -d ~/bin ]; then
-   export PATH=$PATH:~/bin
+   pathadd "~/bin"
 fi
 
-BLACK="\[\033[0;38m\]"
-RED="\[\033[0;31m\]"
-RED_BOLD="\[\033[01;31m\]"
-BLUE="\[\033[01;34m\]"
-GREEN="\[\033[0;32m\]"
 
-# capistrano & capifony need ruby... ewwww
-#export PATH=$PATH:~/.gem/ruby/1.8/bin
+export BLACK="\[\e[0;38m\]"
+export RED="\[\e[31;1m\]";
+export RED_BOLD="\[\e[01;31m\]"
+export LIGHT_BLUE="\[\e[1;36m\]";
+export BLUE="\[\e[34;1m\]";
+export WHITE="\[\e[1;37m\]";
+export GREEN="\[\e[1;32m\]";
+export WHITE_ON_BLUE="\[\e[44;1;37m\]";
+export WHITE_ON_GREEN="\[\e[42;1;37m\]";
+export END_COLOR="\[\e[0m\]";
 
-# Adds Android sdk
-# export PATH=$PATH:~/android/android-sdk-linux_86/tools
+if [ -f ~/.local_env ]; then
+  . ~/.local_env
+fi
+
+#GREEN="\[\033[0;32m\]"
+#BLUE="\[\033[01;34m\]"
 
 ###########################
 #   Uncomment as needed   #
 ###########################
-# GRoovy
-#export GROOVY_HOME='/usr/share/groovy/'
-#export GRAILS_HOME='~/grails'
-#export PATH=$PATH::~/grails/bin
-
-# Java
-#export JAVA_HOME='/usr/lib/jvm/java-6-sun'
-#export CLASSPATH=.:/usr/share/groovy/lib:/usr/lib/jvm/java-6-sun-1.6.0.16/lib:/usr/share/java:usr/share/java/mysql/mysql-connector-java-5.1.12-bin.jar:$CLASSPATH
-
-# hipHop Crap
-#export HPHP_HOME='~/hipHop/hiphop-php'
-#export HPHP_LIB='~/hipHop/hiphop-php/bin'
-
-# TomCat
-#export CATALINA_HOME='/usr/share/tomcat6'
-#export CATALINA_BASE='/var/lib/tomcat6'
 
 # old ps1's
 # export PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}[\u@\h \W]\$ '
