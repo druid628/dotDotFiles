@@ -1,9 +1,14 @@
 #!/bin/bash
+DOTFILESDIR=`pwd`
+DOTSKELDIR=$DOTFILESDIR/skel
+DOTGITDIR=$DOTFILESDIR/git
+
 ECHO=`which echo`
 . skel/DOT.colors
 $ECHO -e "${BLUE}[dotDotFiles]${NC} Setting up Bash the way you like it."
-cd skel
 
+# skel files
+cd $DOTSKELDIR
 for f in $(ls DOT.*)
 do
   NEWFILENAME=`echo $f | sed 's/DOT//'`
@@ -11,25 +16,37 @@ do
   if [ -e $HOME/$NEWFILENAME ]; then
       mv $HOME/$NEWFILENAME $HOME/$NEWFILENAME.bak
   fi
-  ln -s `pwd`/$f $HOME/$NEWFILENAME
+  ln -s $DOTSKELDIR/$f $HOME/$NEWFILENAME
+done
+
+# git components
+cd $DOTGITDIR
+for f in $(ls DOT.*)
+do
+  NEWFILENAME=`echo $f | sed 's/DOT//'`
+  echo $NEWFILENAME
+  if [ -e $HOME/$NEWFILENAME ]; then
+      mv $HOME/$NEWFILENAME $HOME/$NEWFILENAME.bak
+  fi
+  cp $DOTGITDIR/$f $HOME/$NEWFILENAME
 done
 
 # move back to dotDotFiles
-cd ../
+cd $DOTFILESDIR
 
 cd $HOME
 # bin dir
 if [ -d $HOME/bin ]; then
    $ECHO -e "${BLUE}[dotDotFiles]${NC} Copy and update your bin/ files as needed."
 else
-   ln -s dotDotFiles/bin $HOME/bin
+   ln -s $DOTFILESDIR/bin $HOME/bin
 fi
 
 # .vim dir
 if [ -d $HOME/.vim ]; then
    $ECHO -e "${BLUE}[dotDotFiles]${NC} Update your .vim folder"
 else
-   ln -s dotDotFiles/vim $HOME/.vim
+   ln -s $DOTFILESDIR/vim $HOME/.vim
 fi
 
 # update gitconfig
