@@ -14,6 +14,10 @@ if [ -d ~/bin ]; then
     pathadd "~/bin"
 fi
 
+if [ -f /etc/bash_completion ]; then
+    source /etc/bash_completion
+fi
+
 if [ -f ~/.local_env ]; then
     source ~/.local_env
 fi
