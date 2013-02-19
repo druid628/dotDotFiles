@@ -21,20 +21,20 @@ cd ../
 if [ -d $HOME/bin ]; then
    $ECHO -e "${BLUE}[dotDotFiles]${NC} Copy and update your bin/ files as needed."
 else
-   ln -s bin $HOME/bin
+   ln -s dotDotFiles/bin $HOME/bin
 fi
 
 # .vim dir
 if [ -d $HOME/.vim ]; then
    $ECHO -e "${BLUE}[dotDotFiles]${NC} Update your .vim folder"
 else
-   ln -s vim $HOME/.vim
+   ln -s dotDotFiles/vim $HOME/.vim
 fi
 
 # update gitconfig
 $ECHO -e "${BLUE}[dotDotFiles]${NC} ${RED_BOLD}Configure gitconfig?${NC} (y/n):"
 read REPLY
-if [ "$REPLY" == "y" ]; then
+if [ $REPLY == "y" ]; then
     echo "Gimme your email address:"
     read EMAIL
     sed -i "s/druid628\@gmail\.com/$EMAIL/" $HOME/.gitconfig
