@@ -17,6 +17,7 @@ done
 # move back to dotDotFiles
 cd ../
 
+cd $HOME
 # bin dir
 if [ -d $HOME/bin ]; then
    $ECHO -e "${BLUE}[dotDotFiles]${NC} Copy and update your bin/ files as needed."
@@ -34,7 +35,7 @@ fi
 # update gitconfig
 $ECHO -e "${BLUE}[dotDotFiles]${NC} ${RED_BOLD}Configure gitconfig?${NC} (y/n):"
 read REPLY
-if [ $REPLY == "y" ]; then
+if [ $REPLY = "y" ]; then
     echo "Gimme your email address:"
     read EMAIL
     sed -i "s/druid628\@gmail\.com/$EMAIL/" $HOME/.gitconfig
