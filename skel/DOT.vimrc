@@ -19,13 +19,14 @@ call pathogen#infect()
   set ruler
   set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
 
+  :colo darkblue
   if has('gui_running') 
     " full screen
       "set fuoptions=maxvert,maxhorz
       "au GUIEnter * set fullscreen
 
     " font settings
-    :colo molokai
+    " :colo molokai
     " :colo moria
     " :tabnew ~/Dropbox/symfony_api.md
 

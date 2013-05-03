@@ -1,6 +1,6 @@
 # -*- shell-script -*-
 # mkcd: a script which declares a function, mkcd.
-# Time-stamp: <2002-09-03 13:27:08 root mkcd>
+# Time-stamp: <2002-09-03 13:27:08 EDT root mkcd>
 # mkcd creates a directory hierarchy, then cds into it all in one
 # swell foop. To use it in your shell, run it as:
 # . /path/mkcd
@@ -13,8 +13,8 @@
 
 function mkcd
 {
-dir=$1;
-mkdir -p $dir && cd $dir;
+    dir=$1;
+    mkdir -p $dir && cd $dir;
 }
 # -*- shell-script -*-
 # lowercase: a script which declares a function, lowercase.
@@ -32,12 +32,12 @@ mkdir -p $dir && cd $dir;
 
 function lowercase
 {
-echo $@ |tr '[:upper:]' '[:lower:]'
+    echo $@ |tr '[:upper:]' '[:lower:]'
 }
 
 
 # pathadd: Lazy man's way to add to your path
-# Timestamp: <2011-09-19 13:55:53>
+# Timestamp: <2011-09-19 13:55:53 EDT>
 # pathadd takes a directory path and adds it to your path
 # env variable
 function pathadd() 
@@ -47,6 +47,10 @@ function pathadd()
     fi
 }
 
+# classpathadd: Lazy man's way to add/build to your CLASSPATH
+# Timestamp: <2013-05-02 15:15 CDT>
+# classpathadd takes a file and adds it to the CLASSPATH
+# env variable
 function classpathadd()
 {
     if [ -f "$1" ] && [[ ":$CLASSPATH:" != *":$1:"* ]]; then
