@@ -3,6 +3,9 @@
 "------------------------------------------------------------------------------
 " VARIABLE SETTINGS
 "------------------------------------------------------------------------------
+:let mapleader = ","
+set fileformats=unix
+set ff=unix
 " status line
   if has('statusline')
     " always show a status line
@@ -55,6 +58,7 @@ call pathogen#infect()
   " map <leader>tmb <C-t>
   map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
   map <C-[><C-]>  :vsp<CR>:exec("tag ".expand("<cword>"))<CR>
+  map ,unix :e ++ff=unix<CR>
 
 
 " Tag List Options
@@ -183,6 +187,10 @@ call pathogen#infect()
 
     nnoremap <C-l> :call g:ToggleNuMode()<CR>
 
+  " save over file if in read only mode 
+    command SudoW :w !sudo tee %
+    map <leader>sw :SudoW<CR>
+  
   " Same goes for :set wrap and set nowrap
     map ,w :set wrap!<CR>
 

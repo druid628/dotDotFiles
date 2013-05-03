@@ -47,6 +47,12 @@ function pathadd()
     fi
 }
 
+function classpathadd()
+{
+    if [ -f "$1" ] && [[ ":$CLASSPATH:" != *":$1:"* ]]; then
+            export CLASSPATH="$CLASSPATH:$1"
+    fi
+}
 
 # include_function_file 
 # Taken from ioBashExtras by Jeremy G. ( @jgintlio )
