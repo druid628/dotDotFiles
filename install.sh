@@ -5,6 +5,7 @@ DOTGITDIR=$DOTFILESDIR/git
 
 ECHO=`which echo`
 . skel/DOT.colors
+. skel/DOT.bash_signature
 $ECHO -e "${BLUE}[dotDotFiles]${NC} Setting up Bash the way you like it."
 
 # skel files
