@@ -1,5 +1,6 @@
+# assumes that .colors has been sourced
 ECHO=`which echo`
-. skel/DOT.colors
+
 
 $ECHO -e "${BLUE} ________              .__________    ________________   ______  ${NC}"
 $ECHO -e "${BLUE} \______ \_______ __ __|__\______ \  /  _____/\_____  \ /  __  \ ${NC}"
