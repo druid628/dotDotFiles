@@ -14,3 +14,7 @@ Installation
 
     curl -k https://raw.github.com/druid628/dotDotFiles/master/web_install.sh | sh
 
+  Updates
+  -------------
+    cd ~/dotDotFiles
+    ./update.sh
