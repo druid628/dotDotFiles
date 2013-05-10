@@ -8,7 +8,7 @@ GIT=`which git`
 . skel/DOT.bash_signature
 
 $ECHO -e "${BLUE}[dotDotFiles]${NC} Updating dot files repo."
-$GIT pull 
+$GIT pull -q
 # skel files
 $ECHO -e "${BLUE}[dotDotFiles]${NC} Adding new dot files."
 cd $DOTSKELDIR
