@@ -24,8 +24,6 @@ alias duh='du -h'					# because i kept typing duh instead of du -h
 alias gerp="egrep --exclude=\*.git\* -r -n"
 alias records='uprecords'
 alias bhg='cat $HISTFILE| grep'
-alias i-can-haz='sudo apt-get install'
-alias i-can-haz-updates='sudo apt-get upgrade'
 alias git='~/bin/git-achievements'
 alias diff="/usr/bin/diff -y"				# diff preference
 alias getComposer='curl -s http://getcomposer.org/installer | php'
@@ -46,6 +44,11 @@ fi
 # if axel is on the box typo-proof it
 if [ -f '/usr/bin/axel' ]; then
   alias alex="/usr/bin/axel -a"
+fi
+
+# for the lulz
+if [ -f $HOME/.lolcatz_aliases ]; then
+  . ~/.lolcatz_aliases
 fi
 
 # anything specific to the local box
