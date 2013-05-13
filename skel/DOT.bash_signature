@@ -1,6 +1,11 @@
-# assumes that .colors has been sourced
+#!/bin/bash
+tput colors > /dev/null
+if [ $? -eq 0 ]; then
+  BLUE='\e[0;34m'
+  CYAN='\e[0;36m'
+  LIGHT_BLUE='\e[1;34m'
+fi
 ECHO=`which echo`
-
 
 $ECHO -e "${BLUE} ________              .__________    ________________   ______  ${NC}"
 $ECHO -e "${BLUE} \______ \_______ __ __|__\______ \  /  _____/\_____  \ /  __  \ ${NC}"
