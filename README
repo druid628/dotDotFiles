@@ -12,7 +12,7 @@ Installation
   Quick install
   -------------
 
-    curl -k https://raw.github.com/druid628/dotDotFiles/master/web_install.sh | sh
+    curl -k https://raw.github.com/druid628/dotDotFiles/master/web_install.sh | bash
 
   Updates
   -------------
