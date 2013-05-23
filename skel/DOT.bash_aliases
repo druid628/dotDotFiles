@@ -3,18 +3,10 @@
 # go here
 #
 # System specific ones go in .local_aliases
-# 
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     eval "`dircolors -b`"
-    #alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
-    #alias grep='grep --color=auto'
-    #alias fgrep='fgrep --color=auto'
-    #alias egrep='egrep --color=auto'
 fi
 # some more ls aliases
 alias ls='ls --color=auto --group-directories-first'
@@ -51,12 +43,13 @@ if [ -f $HOME/.lolcatz_aliases ]; then
   . ~/.lolcatz_aliases
 fi
 
+# SVN. ugh. 
+if [ -f '~/.svn_aliases' ]; then
+  . ~/.svn_aliases
+fi
+
 # anything specific to the local box
 if [ -f $HOME/.local_aliases ]; then
   . ~/.local_aliases
 fi
 
-# SVN. ugh. 
-if [ -f '~/.svn_aliases' ]; then
-  . ~/.svn_aliases
-fi

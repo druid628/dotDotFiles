@@ -1,14 +1,32 @@
 #
-export PAGER='/usr/bin/less'
-export EDITOR='/usr/bin/vi'
-export HISTTIMEFORMAT='%F %T '
+##############
+## CLI options
+##############
 # turn on cli vi
 set -o vi
+
+# shell options
+shopt -s checkwinsize
+shopt -s cdable_vars
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+
+# ENV Variables
+export PS1='[\[\e[44;1;37m\]\u\[\e[0m\]\[\e[1;37m\]@\[\e[0m\]\[\e[42;1;37m\]\h\[\e[0m\] \[\e[31;1m\]\W\[\e[0m\]\[\e[1;36m\]$(__git_ps1 " (%s)")\[\e[0m\]]\$ '
+# export PS1='[\[\e[44;1;37m\]\u\[\e[0m\]\[\e[1;37m\]@\[\e[0m\]\[\e[42;1;37m\]\h\[\e[0m\] \[\e[31;1m\]\W\[\e[0m\]\[\e[1;36m\]\[\e[0m\]]\$ '
+export HISTTIMEFORMAT='%F %T '
+export LSCOLORS="ExGxFxdxCxDxDxhbadExEx"
+export EDITOR="/usr/bin/vim"
+export PAGER='/usr/bin/less'
+
+
 
 # adds bash functions like lowercase, mkcd and patthadd
 if [[ -z "`type -t pathadd`" && -f ~/.bash_functions ]]; then
     source ~/.bash_functions
 fi
+
 # turn on home bin dir
 if [ -d ~/bin ]; then
     pathadd "~/bin"
