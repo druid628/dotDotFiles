@@ -20,7 +20,9 @@ export LSCOLORS="ExGxFxdxCxDxDxhbadExEx"
 export EDITOR="/usr/bin/vim"
 export PAGER='/usr/bin/less'
 
-
+if [[ -f ~/.colors ]]; then
+    source ~/.colors
+fi
 
 # adds bash functions like lowercase, mkcd and patthadd
 if [[ -z "`type -t pathadd`" && -f ~/.bash_functions ]]; then
